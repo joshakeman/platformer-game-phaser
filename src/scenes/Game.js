@@ -1,5 +1,6 @@
 /// <reference path="../../typings/phaser.d.ts" />
 import Phaser from 'phaser';
+import Hero from '../entities/Hero'
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -24,10 +25,7 @@ class Game extends Phaser.Scene {
       repeat: -1
     });
 
-    this.player = this.physics.add.sprite(400, 300, 'hero-run-sheet');
-    this.player.anims.play('hero-running');
-
-    this.player.body.setCollideWorldBounds(true);
+    this.hero = new Hero(this, 250, 160);
   }
 
   update(time, delta) {}
